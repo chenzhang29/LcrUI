@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LcrUI", "LcrUI\LcrUI.csproj", "{0B09BBE6-10B1-40D7-B482-A47E4ADF199A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCommon", "WpfCommon\WpfCommon.csproj", "{602B83C7-9AB9-4EDD-8FF3-B250F1FAF1F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LcrSimulation", "LcrSimulation\LcrSimulation.csproj", "{D2DA3F68-A975-481A-84DE-4C9097CC3441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B09BBE6-10B1-40D7-B482-A47E4ADF199A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B09BBE6-10B1-40D7-B482-A47E4ADF199A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B09BBE6-10B1-40D7-B482-A47E4ADF199A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B09BBE6-10B1-40D7-B482-A47E4ADF199A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602B83C7-9AB9-4EDD-8FF3-B250F1FAF1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602B83C7-9AB9-4EDD-8FF3-B250F1FAF1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602B83C7-9AB9-4EDD-8FF3-B250F1FAF1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602B83C7-9AB9-4EDD-8FF3-B250F1FAF1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2DA3F68-A975-481A-84DE-4C9097CC3441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DA3F68-A975-481A-84DE-4C9097CC3441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2DA3F68-A975-481A-84DE-4C9097CC3441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2DA3F68-A975-481A-84DE-4C9097CC3441}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6690B4D-0240-4712-B24E-69952631EB9F}
+	EndGlobalSection
+EndGlobal
