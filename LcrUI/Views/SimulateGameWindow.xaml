@@ -36,6 +36,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -69,15 +70,61 @@
                 <Button Content="Play" Margin="2" Grid.Column="0" Command="{Binding PlayCommand}"/>
                 <Button Content="Cancel" Margin="2" Grid.Column="1" Command="{Binding CancelCommand}"/>
             </Grid>
+
+            <CheckBox Content="Update Plot?" IsChecked="{Binding UpdatePlot}" Grid.Row="6" Margin="5"/>
         </Grid>
 
-        <Grid Grid.Column="1"  Grid.Row="0">
-            <charting:Chart Title="Game Simulations">
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <charting:Chart Title="Game Simulations" Grid.Row="0">
                 <charting:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding SimulationResults}" IsSelectionEnabled="True"
                                      Title="Game" />
                 <charting:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding SimulationAverage}" IsSelectionEnabled="True"
                                      Title="Average"/>
             </charting:Chart>
+
+            <ItemsControl ItemsSource="{Binding PlayersInfo}" Grid.Row="1">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="25 5">
+                            <Grid.ToolTip>
+                                <TextBlock>
+                                    <Run Text="Player"/>
+                                    <Run Text="{Binding Id, Mode=OneWay}"/>
+                                    <Run Text="with"/>
+                                    <Run Text="{Binding NumOfWins}"/>
+                                    <Run Text="total wins"/>
+                                </TextBlock>
+                            </Grid.ToolTip>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0" Height="40" Stretch="Uniform" HorizontalAlignment="Center">
+                                <ContentControl>
+                                    <Path Style="{StaticResource PlayerPathStyle}"/>
+                                </ContentControl>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center">
+                                <Run Text="Player"/>
+                                <Run Text="{Binding Id, Mode=OneWay}"/>
+                            </TextBlock>
+                            <TextBlock Grid.Row="2" HorizontalAlignment="Center" Text="Winner" Foreground="YellowGreen" FontWeight="Bold"
+                                       Visibility="{Binding IsWinner, Converter={StaticResource BoolVisibilityConverter}, FallbackValue=Collapsed}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2">

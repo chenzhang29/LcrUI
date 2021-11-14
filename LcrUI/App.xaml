@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:LcrUI"
              StartupUri="Views/SimulateGameWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Resources.xaml" />
     </Application.Resources>
 </Application>
